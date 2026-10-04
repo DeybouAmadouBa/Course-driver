@@ -1,0 +1,564 @@
+/* =========================================
+   COURSE DRIVER - STYLE GENERAL
+   ========================================= */
+
+/* 1. Variables et réinitialisation */
+
+:root {
+    --primary: #15803d;
+    --primary-dark: #166534;
+    --primary-light: #dcfce7;
+    --secondary: #172033;
+    --text: #374151;
+    --muted: #64748b;
+    --background: #f7f9fc;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+    --success-light: #dcfce7;
+    --warning-light: #fef3c7;
+    --radius: 12px;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--secondary);
+    background: var(--background);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.25;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+}
+
+/* 2. Conteneurs */
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.page-container {
+    width: min(1200px, 94%);
+    margin: 35px auto;
+}
+
+.card,
+.dashboard-card,
+.course-card,
+.vehicle-card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card + .card {
+    margin-top: 20px;
+}
+
+/* 3. Boutons */
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-success {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 11px 18px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-success:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--secondary);
+    border-color: var(--border);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: var(--white);
+}
+
+.btn-success {
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+button:disabled,
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 4. Formulaires */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 13px;
+    color: var(--secondary);
+    background: var(--white);
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    min-height: auto;
+}
+
+/* 5. Authentification */
+
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    padding: 35px 16px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 470px;
+    padding: 32px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.auth-card h1,
+.auth-card h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.auth-footer {
+    margin-top: 22px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* 6. Messages */
+
+.alert {
+    margin: 18px 0;
+    padding: 14px 16px;
+    border-radius: 9px;
+    line-height: 1.5;
+}
+
+.alert-success {
+    color: #166534;
+    background: var(--success-light);
+    border: 1px solid #86efac;
+}
+
+.alert-danger,
+.alert-error {
+    color: #991b1b;
+    background: var(--danger-light);
+    border: 1px solid #fca5a5;
+}
+
+.alert-warning {
+    color: #92400e;
+    background: var(--warning-light);
+    border: 1px solid #fcd34d;
+}
+
+/* 7. En-têtes et navigation */
+
+.site-header,
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 5%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand,
+.logo {
+    color: var(--primary-dark);
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.nav-links a {
+    font-weight: 600;
+}
+
+/* 8. Tableau de bord */
+
+.dashboard-header {
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 8px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.dashboard-card h2,
+.dashboard-card h3 {
+    margin-top: 0;
+}
+
+.dashboard-card .stat-value {
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.section-title {
+    margin: 32px 0 18px;
+}
+
+/* 9. Courses */
+
+.course-list {
+    display: grid;
+    gap: 20px;
+}
+
+.course-card h2,
+.course-card h3 {
+    margin-top: 0;
+}
+
+.course-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.course-details p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.price {
+    color: var(--primary-dark);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* 10. Statuts des courses */
+
+.badge,
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-en_attente,
+.status-en-attente {
+    color: #92400e;
+    background: var(--warning-light);
+}
+
+.status-acceptee,
+.status-acceptee {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.status-en_cours,
+.status-en-cours {
+    color: #6b21a8;
+    background: #f3e8ff;
+}
+
+.status-terminee,
+.status-terminee {
+    color: #166534;
+    background: var(--success-light);
+}
+
+.status-annulee,
+.status-annulee {
+    color: #991b1b;
+    background: var(--danger-light);
+}
+
+/* 11. Tableaux */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px 15px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    color: var(--secondary);
+    background: #f1f5f9;
+    font-weight: 700;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* 12. Véhicules */
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.vehicle-card h3 {
+    margin-top: 0;
+}
+
+.vehicle-plate {
+    display: inline-block;
+    padding: 8px 13px;
+    color: var(--secondary);
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* 13. Notes et avis */
+
+.rating-stars {
+    color: #f59e0b;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.review-card {
+    margin: 16px 0;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* 14. Pied de page */
+
+.site-footer {
+    margin-top: 55px;
+    padding: 25px 5%;
+    color: #d1d5db;
+    background: #111827;
+    text-align: center;
+}
+
+/* 15. Responsive : tablettes et téléphones */
+
+@media (max-width: 900px) {
+    .dashboard-grid,
+    .vehicle-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page-container {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header,
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .auth-card {
+        padding: 23px 18px;
+    }
+
+    .dashboard-grid,
+    .vehicle-grid,
+    .course-details {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .dashboard-card,
+    .course-card,
+    .vehicle-card {
+        padding: 18px;
+    }
+
+    .course-actions {
+        flex-direction: column;
+    }
+
+    .course-actions .btn,
+    .course-actions button {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}
